@@ -28,7 +28,7 @@ def send_mail(message, password):
         msg = EmailMessage()
         msg.set_content(message)
 
-        msg['Subject'] = platform.node()
+        msg['Subject'] = honeypot + ":" + platform.node()
         msg['From'] = sender_email
         msg['To'] = receiver_email
         
@@ -70,7 +70,7 @@ if __name__ == "__main__":
 
     if honeypot == 'valhala':
 
-        while True and (interval > 30):
+        while True and (interval > 120):
             if get_file() == False:
                 print("No new logs since last update\n...")
                 time.sleep(interval)
@@ -79,4 +79,4 @@ if __name__ == "__main__":
                 send_mail(honeypot_valhala(), password_email)
                 os.remove(get_file())
                 time.sleep(interval)
-        exit("Interval must be at least 30s")
+        exit("Interval must be at least 120s")

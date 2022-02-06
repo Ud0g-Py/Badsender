@@ -1,12 +1,19 @@
 # Badsender
 Send your log from Valhala or Artillery honeypots to your intel inbox
 
-## Tech-Aspects
+## Usage
 
-_Windows & Linux compatible._
+_Windows (Server 2016 & Server 2019) & Linux compatible._
 
 * Configure and launch your honeypot
-* Put your SMPT and log info when prompted.
-* Select a time interval
-* Get your intel
+* Rename **data_template.py** to **data.py**
+* Put your SMPT and log info into **data.py**
+* Select a time interval (in seconds)
+* Input your password when prompted
+* Get your intel and hunt'em all
 
+## Example
+
+```
+python3.exe .\badsender.py valhala "C:\valhala\" 10800
+```
