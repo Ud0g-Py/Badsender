@@ -44,7 +44,7 @@ def send_mail(message, password):
 
 def honeypot_valhala():
 
-    with open(get_file()) as f:
+    with open(get_file(), errors="ignore") as f:
         lines = f.readlines()
         message = ""
         for line in lines:
